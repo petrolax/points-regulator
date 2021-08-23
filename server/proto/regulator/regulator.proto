@@ -1,0 +1,20 @@
+syntax = "proto3";
+// option go_package = "github.com/petrolax/points-regulator";
+option go_package = "regulator";
+
+service PointsRegulator {
+  rpc RegulateSetsOfFourPoints(PointsRequest) returns (PointsResponse) {}
+}
+
+message PointsRequest {
+  repeated Point points = 1;
+}
+
+message PointsResponse {
+  repeated Point points = 1;
+}
+
+message Point {
+  int64 x = 1;
+  int64 y = 2;
+}
